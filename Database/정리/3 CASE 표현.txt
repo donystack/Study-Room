@@ -1,0 +1,8 @@
+CASE 표현은 IF-THEN-ELSE 논리와 유사한 방식으로 표현식을 작성해서 SQL의 비교 연산 기능을 보완하는 역할을 한다. ANSI/ISO 표준에는 CASE Expression이라고 표시되어 있는데, 함수와 같은 성격을 가지고 있으며 Oracle의 Decode 함수와 같은 기능을 하므로 단일행 내장 함수에서 같이 설명한다.
+
+CASE Expressions은 Simple Case Expression과 Searched Case Expression 두 가지 표현법이 있다.
+
+1. Simple Case Expressiond
+다음에 바로 조건에 사용되는 칼럼이나 표현식을 표시하고, 다음
+
+2. Searched Case Expression 

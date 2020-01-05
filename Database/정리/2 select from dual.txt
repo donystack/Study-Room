@@ -1,0 +1,28 @@
+The DUAL table was created by Charles Weiss of Oracle corporation to provide a table for joining in internal views.
+
+SELECT * FROM DUAL;
+DUMMY
+----------
+X
+
+SELECT 'ABCDEF12345' FROM DUAL;
+'ABCDEF1234
+-----------
+ABCDEF12345
+
+NHURT190
+	<statement id="find01" parameterClass="map" resultClass="camelCaseMap">
+	/*HURT190.find01*/
+		SELECT
+			 Z.WKGD_CD as WKGD_CD					/* 직급코드 */
+			,Z.WKGD_NM as WKGD_NM					/* 직급명 */
+			,Z.WKGD_ABBNM as WKGD_ABBNM				/* 직급약명 */
+			,Z.WKGD_ENG_NM as WKGD_ENG_NM				/* 직급영문명 */
+			,Z.WKGD_ENG_ABBNM as WKGD_ENG_ABBNM		/* 직급영문약명 */
+			,Z.CNTRIB_AMT_CD as CNTRIB_AMT_CD			/* 기여금코드 */
+			,Z.OLD_WKGD_CD as OLD_WKGD_CD				/* 구직급코드 */
+			,Z.WKSP_FG as WKSP_FG					/* 직렬구분 */
+			,(SELECT SF_BSNS011_GET_CODENM(Z.WKSP_FG) FROM DUAL) as WKSP_FG_NM
+            ,(SELECT SF_BSNS011_GET_CODENM(Z.WKSP_FG,'10') FROM DUAL) as BF_WKSP_FG
+			,Z.BIZTP_FG as BIZTP_FG					/* 직종코드 */
+            

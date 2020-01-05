@@ -1,0 +1,101 @@
+SELECT문의 형식은 다음과 같이 여섯 개의 절로 이루어진다.
+
+5        SELECT  [DISTINCT/ALL] 애트리뷰트(들)
+1         FROM  릴레이션(들)
+2      [WHERE  조건
+                          [중첩 질의]               ]
+3  [GROUP BY  애트리뷰트(들)]
+4     [HAVING  조건]
+6  [ORDER BY  애트리뷰트(들) [ASC | DESC] ];
+cf. [  ] 은 선택 사항 , 앞의 숫자는 문장 실행 순서.
+
+SELECT절 : 질의 결과에 포함하려는 애트리뷰트들의 리스트를 열거한다. 관계대수의 프로젝션 연산에 해당한다. 관계 대수의 실렉션과 혼동하지 말기를 바란다.
+
+DISTINCT : projection할 때 중복제거
+예시)
+SELECT DISTINCT POSITION
+FROM PLAYER;
+결과)
+POSITION
+----------
+GK
+DF
+FW
+MF
+5개의 행이 선택되었다.
+
+FROM 절 : SELECT절에서 사용자가 검색하려는 애트리뷰트들을 포함하고 있는 릴레이션뿐만 아니라 WHERE절의 프레디키트에 사용된 애트리뷰트들을 포함하고 있는 릴레이션들도 열거해야 한다.
+
+WHERE절 : 실렉션 연산의 프레디키트(실렉션 조건)에 해당한다. FROM절에 열거한 릴레이션에 속하는 애트리뷰트들만 사용해서 프레디키트를 표현해야 한다.
+        WHERE절의 프레디키트는 아래와 같은 사항들을 포함한다.
+                비교 연산자  :  = , <>(부정 연산자) , > , < . >= , <= 
+                부울 연산자  :  AND , OR , NOT
+                집합 연산자  :  IN , NOT IN , ANY (SOME) , ALL
+        프레디키트는 비교 연산자와 부울 연산자 등이 결합된 복잡한 형태도 가능하다.
+        UPDATE문과 DELETE문에도 사용되는데, WHERE절의 구문은 모두 동일하다.
+
+중첩 질의 : 다른 질의의 WHERE절에 포함된 SELECT문이다. 알려지지 않은 기준을 이용한 검색을 위해 사용한다.
+
+GROUP BY절 : 질의 결과에서 GROUP BY 다음에 명시된 애트리뷰트에 동일한 값을 갖는 투플들을 한 그룹으로 묶는다.(그룹화)
+그룹화(group by)(절에 사용되는 애트리뷰트는 집단 함수에 사용되지 않는 애트리뷰트이어야 한다.)
+SELECT절에는 각 그룹마다 하나의 값을 갖는 애트리뷰트(일반?), 집단 함수, 그룹화에 사용된 애트리뷰트들만 나타낼 수 있다.
+ex)
+select dno, avg(salary) as avgsal, max(salary) as maxsal
+from employee
+group by dno;
+
+HAVING절 : (어떤 조건을 만족하는 그룹들에 대해서만 집단 함수를 적용)투플들의 그룹이 만족해야 하는 조건을 나타낸다.
+having절에 나타나는 애트리뷰트는 반드시 group by절에 나타나거나 집단 함수에 포함되어야 한다.
+(where절은 투플들을 걸러내고 having절은 그룹들을 걸러낸다는 점이 다르다.)
+(만일 having절은 사용하지만 gorup by절을 생략하면 where절을 만족하는 투플들의 집합을 하나의 그룹으로 취급한다. 이러한 경우에 having절은 추가적인 where절처럼 동작한다.)
+
+ex) K-리그 선수들의 포지션별 평균키를 구하는데, 평균키가 180cm 이상인 정보만 표시한다.
+SELECT position, round(avg(height),2) 평균키
+FROM player
+GROUP BY position
+HAVING avg(height) >= 180;
+result)
+position    평균키
+-------------------
+GK           186.26
+DF           180.21
+
+집단 함수 ( count(표현식), max(distinct/all 표현식), min(distinct/all 표현식), avg(distinct/all 표현식), sum(distinct/all 표현식) )
+ex)
+select avg(salary) as avgsal, max(salary) as maxsal
+from employee;
+
+Futher understanding of having
+K-리그 선수들 중 삼성블루윙즈(K02)와 FC서울(K09)의 인원수는 얼마인가
+
+1.잘못)
+SELECT count(*) 인원수
+FROM player
+WHERE team_id IN ('K09', 'K02');
+
+결과)
+인원수
+------
+98
+
+2. where 사용)
+SELECT team_id 팀ID, count(*) 인원수
+FROM player
+WHERE team_id IN ('K09', 'K02')
+GROUP BY team_id;
+
+3. having 사용)
+SELECT team_id 팀ID, count(*) 인원수
+FROM player
+GROUP BY team_id
+HAVING team_id IN ('K09', 'K02');
+
+결과)
+팀ID    인원수
+---------------
+k02     49
+k09     49
+
+가능하면 where 절에서 조건절을 적용하여 group by의 계산 대상을 줄이는 것이 효율적인 자원 사용 측면에서 바람직하다.
+
+
