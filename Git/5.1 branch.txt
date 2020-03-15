@@ -1,0 +1,108 @@
+git branch
+*master 라고 나옴. --> 현재 내가 쓰고 있는 branch가 master임을 의미
+
+git branch exp(experiment)(보통 실험적인 것을 할 때는 exp_접두사를 사용 혹은 조직이름)
+브랜치를 생성하고
+git branch 
+exp
+*master
+생성된 것을 확인할 수 있다.
+
+(check out이 찍고 나가는 의미도 있지만 확인하다는 의미도 있다.)
+git checkout exp 
+master를 찍고 exp브랜치로 옮김.
+
+같은 디렉토리이지만 브렌치의 파일 구성에 따라
+보여지는 파일 목록도 다르다.(checkout을 이용)
+이것을 아주 가볍고 저장소를 추가적으로 쓰지 않고 한다.
+master branch에서는 f1.txt만 보이지만
+exp branch에서는 f1.txt, f2.txt가 보일 수 있다.
+
+
+git 브랜치 정보확인.
+브랜치를 만들면 상당히 편리한 기능을 갖게되는 만큼 복잡성을 갖게 된다.
+git이 어렵다는 말은 효용에 대한 대가인지도.
+
+$git branch
+*exp
+master
+
+비교
+(잘 사용)>git log --brenches --decorate (--graph 좀 더 효용 시각적 (--oneline 더 시각화))
+>git log master..exp -->master브렌치와 exp브렌치를 비교해서 master에는 없고 exp에는 있는 것을 보여줌.
+>git log exp..master -->exp에는 없고 master에는 있는 것을 비교해서 보여준다.
+
+>git log -p exp..master  -->source code까지 비교하고 싶을 때는
+
+>git diff  --> 각각의 브렌치의 현재 상태를 비교할 수 있다.
+>git diff master..exp
+
+병합 merge
+분기 후 각자의 작업을 어느 시점에 병합해야할 때.
+
+(사진1)
+exp의 내용을 master로 옮기는 방법.
+먼저 master로 checkout
+>git merge exp
+이 커밋은 두개의 부모를 갖는다.
+
+>git branch -d exp 
+exp브렌치 삭제.
+
+
+branch 수련 (pro git p.59)
+
+branch 병합시 충돌해결
+merge를 하는 과정에서 파일의 이름이 다를 경우에는 해피하게 병합할 수 있다.
+merge를 하는 과정에서 파일의 이름이 같을 경우엔 충돌이 일어날 수 있다.
+수정한 위치가 다르다면 문제없이 merge가 가능하다.
+(그리고 충돌이 나는 경우는 그리 많지 않다.)
+
+수정한 위치가 같다면 unhappy한 상황이 발생할 수 있다.
+예들 들면
+exp 브랜치의 내용
+function a(){
+}
+function b(exp){
+}
+function c(){
+}
+
+master 브랜치의 내용
+function a(){
+}
+function b(master){
+}
+function c(){
+}
+
+function b 부분이 수정한 위치는 같지만 내용은 다르다는  것을 확인할 수 있다.
+
+이 때 merge를 하면
+오류 메세지 https://opentutorials.org/course/2708/15275가 나옵니다.
+해당 설명 10:30
+
+충돌 된 부분을 수정합니다.
+function a(){
+}
+<<<<<<< HEAD   // 현재 체크 아웃된 파일의 코드 내용
+function b(master){
+============== 을 기준으로 
+function b(exp){
+>>>>>>> exp   //병합하려는 브랜치의 코드 내용
+}
+function c(){
+}
+
+이러한 방식으로 수정할 수 있을 겁니다.(one of ways)
+function a(){
+}
+function b(master, exp){
+}
+function c(){
+}
+
+stash(meaning:감추다, 숨겨두다)
+다른 브랜치로 checkout을 해야 하는데 아직 현재 브랜치에서 작업이 끝나지 않은 경우는 커밋을 하기가 애매합니다. 이런 경우 stash를 이용하면 작업중이던 파일을 임시로 저장해두고 현재 브랜치의 상태를 마지막 커밋의 상태로 초기화 할 수 있습니다. 
+
+git stash 하면 됨.(코딩 4:30) 이후 들으면 좋을듯

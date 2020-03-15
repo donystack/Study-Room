@@ -1,85 +1,85 @@
-Where Àý¿¡¼­ »ç¿ëµÇ´Â ¿¬»êÀÚ´Â 3°¡Áö Á¾·ù°¡ ÀÖ´Ù.
+Where ì ˆì—ì„œ ì‚¬ìš©ë˜ëŠ” ì—°ì‚°ìžëŠ” 3ê°€ì§€ ì¢…ë¥˜ê°€ ìžˆë‹¤.
 
-1. ºñ±³ ¿¬»êÀÚ 2. SQL ¿¬»êÀÚ 3. ³í¸® ¿¬»êÀÚ
+1. ë¹„êµ ì—°ì‚°ìž 2. SQL ì—°ì‚°ìž 3. ë…¼ë¦¬ ì—°ì‚°ìž
 
-ºñ±³¿¬»êÀÚ : = ,  <> , > , < . >= , <=
+ë¹„êµì—°ì‚°ìž : = ,  <> , > , < . >= , <=
 
-SQL ¿¬»êÀÚ 
-BETWEEN a AND b : a¿Í bÀÇ °ª »çÀÌ¿¡ ÀÖÀ¸¸é µÈ´Ù.(a¿Í b °ªÀÌ Æ÷ÇÔµÊ)
-IN (list) : ¸®½ºÆ®¿¡ ÀÖ´Â °ª Áß¿¡¼­ ¾î´À ÇÏ³ª¶óµµ ÀÏÄ¡ÇÏ¸é µÈ´Ù.
-LIKE 'ºñ±³¹®ÀÚ¿­' : ºñ±³¹®ÀÚ¿­°ú ÇüÅÂ°¡ ÀÏÄ¡ÇÏ¸é µÈ´Ù.(%, _ »ç¿ë)
-IS NULL : NULL °ªÀÎ °æ¿ì
+SQL ì—°ì‚°ìž 
+BETWEEN a AND b : aì™€ bì˜ ê°’ ì‚¬ì´ì— ìžˆìœ¼ë©´ ëœë‹¤.(aì™€ b ê°’ì´ í¬í•¨ë¨)
+IN (list) : ë¦¬ìŠ¤íŠ¸ì— ìžˆëŠ” ê°’ ì¤‘ì—ì„œ ì–´ëŠ í•˜ë‚˜ë¼ë„ ì¼ì¹˜í•˜ë©´ ëœë‹¤.
+LIKE 'ë¹„êµë¬¸ìžì—´' : ë¹„êµë¬¸ìžì—´ê³¼ í˜•íƒœê°€ ì¼ì¹˜í•˜ë©´ ëœë‹¤.(%, _ ì‚¬ìš©)
+IS NULL : NULL ê°’ì¸ ê²½ìš°
 
-³í¸® ¿¬»êÀÚ : AND, OR, NOT
+ë…¼ë¦¬ ì—°ì‚°ìž : AND, OR, NOT
 
-ºÎÁ¤ ºñ±³ ¿¬»êÀÚ 
-!=, ^=, <> : °°Áö ¾Ê´Ù. 
-(<> °¡Àå ¸¹ÀÌ »ç¿ë.ANSI)
-NOT Ä®·³¸í =  : ~¿Í °°Áö ¾Ê´Ù. (ex. not position = 'MF')
-NOT Ä®·³¸í >  : ~º¸´Ù Å©Áö ¾Ê´Ù.
+ë¶€ì • ë¹„êµ ì—°ì‚°ìž 
+!=, ^=, <> : ê°™ì§€ ì•Šë‹¤. 
+(<> ê°€ìž¥ ë§Žì´ ì‚¬ìš©.ANSI)
+NOT ì¹¼ëŸ¼ëª… =  : ~ì™€ ê°™ì§€ ì•Šë‹¤. (ex. not position = 'MF')
+NOT ì¹¼ëŸ¼ëª… >  : ~ë³´ë‹¤ í¬ì§€ ì•Šë‹¤.
 
-ºÎÁ¤ SQL ¿¬»êÀÚ
-NOT BETWEEN a AND b : a¿Í bÀÇ °ª »çÀÌ¿¡ ÀÖÁö ¾Ê´Ù.(a¿Í b °ªÀ» Æ÷ÇÔÇÏÁö ¾Ê´Â´Ù.)
-NOT IN (list) : list °ª°ú ÀÏÄ¡ÇÏÁö ¾Ê´Â´Ù.
-IS NOT NULL : NULL °ªÀ» °®Áö ¾Ê´Â´Ù.
+ë¶€ì • SQL ì—°ì‚°ìž
+NOT BETWEEN a AND b : aì™€ bì˜ ê°’ ì‚¬ì´ì— ìžˆì§€ ì•Šë‹¤.(aì™€ b ê°’ì„ í¬í•¨í•˜ì§€ ì•ŠëŠ”ë‹¤.)
+NOT IN (list) : list ê°’ê³¼ ì¼ì¹˜í•˜ì§€ ì•ŠëŠ”ë‹¤.
+IS NOT NULL : NULL ê°’ì„ ê°–ì§€ ì•ŠëŠ”ë‹¤.
 
-¿ì¼± ¼øÀ§
-1. °ýÈ£ ()
-2. NOT ¿¬»êÀÚ
-3. ºñ±³ ¿¬»êÀÚ, SQL ºñ±³ ¿¬»êÀÚ
+ìš°ì„  ìˆœìœ„
+1. ê´„í˜¸ ()
+2. NOT ì—°ì‚°ìž
+3. ë¹„êµ ì—°ì‚°ìž, SQL ë¹„êµ ì—°ì‚°ìž
 4. AND
 5. OR
 
 
-¿¬»êÀÚÀÇ Ãß°¡Àû ÀÌÇØ
+ì—°ì‚°ìžì˜ ì¶”ê°€ì  ì´í•´
 ------------------------------------------------------------------------------------------------------
-ºÎ¿ï ¿¬»êÀÚ : AND, OR, NOT
+ë¶€ìš¸ ì—°ì‚°ìž : AND, OR, NOT
 
-#´Ù¼öÀÇ °Ë»ö Á¶°Ç
-WHEREÀý¿¡ ¿©·¯ Á¶°ÇµéÀÌ ³í¸® ¿¬»êÀÚ·Î °áÇÕµÈ ÇÁ·¹µðÅ°Æ®¸¦ Æ÷ÇÔÇÒ ¼ö ÀÖ´Ù.
+#ë‹¤ìˆ˜ì˜ ê²€ìƒ‰ ì¡°ê±´
+WHEREì ˆì— ì—¬ëŸ¬ ì¡°ê±´ë“¤ì´ ë…¼ë¦¬ ì—°ì‚°ìžë¡œ ê²°í•©ëœ í”„ë ˆë””í‚¤íŠ¸ë¥¼ í¬í•¨í•  ìˆ˜ ìžˆë‹¤.
 
-CF. ÇÁ·¹µðÅ°Æ®(predicate)(¼ú¾î)
-½Ç·º¼Ç Á¶°ÇÀ» 'ÇÁ·¹µðÅ°Æ®'¶ó°íµµ ÇÑ´Ù.
-½Ç·º¼Ç Á¶°ÇÀº ÀÏ¹ÝÀûÀ¸·Î {= <> <= < >= >}µîÀÇ ºñ±³ ¿¬»êÀÚ, AND, OR, NOT µîÀÇ ºÎ¿ï ¿¬»êÀÚ¸¦ Æ÷ÇÔÇÒ ¼ö ÀÖ´Ù.
-(¼öÇÐ¿¡¼­´Â True or False¸¦ ¹ÝÈ¯ÇÏ´Â ÇÔ¼ö¸¦ ÇÁ·¹µðÅ°Æ®¶ó°í ÇÑ´Ù.
+CF. í”„ë ˆë””í‚¤íŠ¸(predicate)(ìˆ ì–´)
+ì‹¤ë ‰ì…˜ ì¡°ê±´ì„ 'í”„ë ˆë””í‚¤íŠ¸'ë¼ê³ ë„ í•œë‹¤.
+ì‹¤ë ‰ì…˜ ì¡°ê±´ì€ ì¼ë°˜ì ìœ¼ë¡œ {= <> <= < >= >}ë“±ì˜ ë¹„êµ ì—°ì‚°ìž, AND, OR, NOT ë“±ì˜ ë¶€ìš¸ ì—°ì‚°ìžë¥¼ í¬í•¨í•  ìˆ˜ ìžˆë‹¤.
+(ìˆ˜í•™ì—ì„œëŠ” True or Falseë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜ë¥¼ í”„ë ˆë””í‚¤íŠ¸ë¼ê³  í•œë‹¤.
 
-ºÎÁ¤ °Ë»ö Á¶°Ç
-»ç¿ëÀÚ°¡ ¿øÇÏÁö ¾Ê´Â ÅõÇÃµéÀ» ¹èÁ¦ÇÏ±â À§ÇØ¼­ {$ºÎÁ¤ ¿¬»êÀÚ$}¸¦ »ç¿ëÇÑ´Ù.
+ë¶€ì • ê²€ìƒ‰ ì¡°ê±´
+ì‚¬ìš©ìžê°€ ì›í•˜ì§€ ì•ŠëŠ” íˆ¬í”Œë“¤ì„ ë°°ì œí•˜ê¸° ìœ„í•´ì„œ {$ë¶€ì • ì—°ì‚°ìž$}ë¥¼ ì‚¬ìš©í•œë‹¤.
 SELECT   EMPNAME, SALARY
 FROM    EMPLOYEE
-WHERE  TITLE='°úÀå' AND DNO <> 1;
+WHERE  TITLE='ê³¼ìž¥' AND DNO <> 1;
 
-¹üÀ§¸¦ »ç¿ëÇÑ °Ë»ö
-BETWEENÀÇ ÀåÁ¡Àº SQL¹®ÀÇ WHEREÀýÀ» Á» ´õ ÀÐ±â ½±°Ô ¸¸µç´Ù´Â °ÍÀÌ´Ù.
+ë²”ìœ„ë¥¼ ì‚¬ìš©í•œ ê²€ìƒ‰
+BETWEENì˜ ìž¥ì ì€ SQLë¬¸ì˜ WHEREì ˆì„ ì¢€ ë” ì½ê¸° ì‰½ê²Œ ë§Œë“ ë‹¤ëŠ” ê²ƒì´ë‹¤.
 =WHERE SALARY BETWEEN 30000 AND 45000;
 =WHERE SALARY >=30000 AND SALARY <=45000;
 
-¸®½ºÆ®¸¦ »ç¿ëÇÑ °Ë»ö
-INÀº ¸®½ºÆ® ³»ÀÇ °ª°ú ºñ±³ÇÑ´Ù. INÀÇ ºÎÁ¤Àº NOT INÀÌ´Ù. 
+ë¦¬ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•œ ê²€ìƒ‰
+INì€ ë¦¬ìŠ¤íŠ¸ ë‚´ì˜ ê°’ê³¼ ë¹„êµí•œë‹¤. INì˜ ë¶€ì •ì€ NOT INì´ë‹¤. 
 =WHERE DNO IN (1, 2, 3);
 =WHERE DNO = 1 OR DNO = 2 OR DNO = 3;
 
-¿¹½Ã)
-»ç¿ø Å×ÀÌºí¿¡¼­ JOBÀÌ MANAGERÀÌ¸é¼­ 20¹ø ºÎ¼­¿¡ ¼ÓÇÏ°Å³ª, JOBÀÌ CLERKÀÌ¸é¼­ 30¹ø ºÎ¼­¿¡ ¼ÓÇÏ´Â »ç¿øÀÇ Á¤º¸¸¦ Ãâ·Â
+ì˜ˆì‹œ)
+ì‚¬ì› í…Œì´ë¸”ì—ì„œ JOBì´ MANAGERì´ë©´ì„œ 20ë²ˆ ë¶€ì„œì— ì†í•˜ê±°ë‚˜, JOBì´ CLERKì´ë©´ì„œ 30ë²ˆ ë¶€ì„œì— ì†í•˜ëŠ” ì‚¬ì›ì˜ ì •ë³´ë¥¼ ì¶œë ¥
 SELECT ENAME, JOB, DEPTNO
 FROM EMP
 WHERE (JOB, DEPTNO) IN (('MANAGER',20),('CLERK',30));
 
-#³Î°ª
-³Î°ªÀ» Æ÷ÇÔÇÑ ´Ù¸¥ °ª°ú ³Î°ªÀ» +, - µîÀ» »ç¿ëÇÏ¿© ¿¬»êÇÏ¸é °á°ú´Â ³ÎÀÌ µÈ´Ù.
-Count(*)¸¦ Á¦¿ÜÇÑ Áý´Ü ÇÔ¼ö(sum, avg, max, min)µéÀº ³Î°ªÀ» ¹«½ÃÇÑ´Ù.
-(COUNT(*)´Â ³ÎÀÌ³ª Áßº¹µÈ °ªµéÀÌ ³ªÅ¸³ª´Â °Í¿¡ »ó°ü¾øÀÌ °á°ú ¸±·¹ÀÌ¼ÇÀÇ ¸ðµç ÅõÇÃµéÀÇ ÃÑ °³¼ö¸¦ ±¸ÇÏ´Â ¹Ý¸é¿¡
- COUNT(¾ÖÆ®¸®ºäÆ®)´Â ÇØ´ç ¾ÖÆ®¸®ºäÆ®¿¡¼­ ³Î°ªÀÌ ¾Æ´Ñ °ªµéÀÇ °³¼ö¸¦ ±¸ÇÑ´Ù.
- ¸ðµç Áý´Ü ÇÔ¼öµéÀÌ ³Î°ªÀ» Á¦°ÅÇÑ ÈÄ ³²¾Æ ÀÖ´Â °ªµé¿¡ ´ëÇØ¼­ °ªÀ» ±¸ÇÑ´Ù.)
---> ¾ÖÆ®¸®ºäÆ®ÀÇ °ªÀÌ ³ÎÀÎÁö ºñ±³ÇÏ·Á¸é »õ·Î¿î ºñ±³ ¿¬»êÀÚÀÎ IS NULL ÀÌ³ª IS NOT NULLÀ» »ç¿ëÇØ¾ß ÇÑ´Ù.
+#ë„ê°’
+ë„ê°’ì„ í¬í•¨í•œ ë‹¤ë¥¸ ê°’ê³¼ ë„ê°’ì„ +, - ë“±ì„ ì‚¬ìš©í•˜ì—¬ ì—°ì‚°í•˜ë©´ ê²°ê³¼ëŠ” ë„ì´ ëœë‹¤.
+Count(*)ë¥¼ ì œì™¸í•œ ì§‘ë‹¨ í•¨ìˆ˜(sum, avg, max, min)ë“¤ì€ ë„ê°’ì„ ë¬´ì‹œí•œë‹¤.
+(COUNT(*)ëŠ” ë„ì´ë‚˜ ì¤‘ë³µëœ ê°’ë“¤ì´ ë‚˜íƒ€ë‚˜ëŠ” ê²ƒì— ìƒê´€ì—†ì´ ê²°ê³¼ ë¦´ë ˆì´ì…˜ì˜ ëª¨ë“  íˆ¬í”Œë“¤ì˜ ì´ ê°œìˆ˜ë¥¼ êµ¬í•˜ëŠ” ë°˜ë©´ì—
+ COUNT(ì• íŠ¸ë¦¬ë·°íŠ¸)ëŠ” í•´ë‹¹ ì• íŠ¸ë¦¬ë·°íŠ¸ì—ì„œ ë„ê°’ì´ ì•„ë‹Œ ê°’ë“¤ì˜ ê°œìˆ˜ë¥¼ êµ¬í•œë‹¤.
+ ëª¨ë“  ì§‘ë‹¨ í•¨ìˆ˜ë“¤ì´ ë„ê°’ì„ ì œê±°í•œ í›„ ë‚¨ì•„ ìžˆëŠ” ê°’ë“¤ì— ëŒ€í•´ì„œ ê°’ì„ êµ¬í•œë‹¤.)
+--> ì• íŠ¸ë¦¬ë·°íŠ¸ì˜ ê°’ì´ ë„ì¸ì§€ ë¹„êµí•˜ë ¤ë©´ ìƒˆë¡œìš´ ë¹„êµ ì—°ì‚°ìžì¸ IS NULL ì´ë‚˜ IS NOT NULLì„ ì‚¬ìš©í•´ì•¼ í•œë‹¤.
 
-³ÎÀÌ ÇÁ·¹µðÅ°Æ®¿¡ ¹ÌÄ¡´Â ¿µÇâÀ» À¯ÀÇÇØ¾ß ÇÑ´Ù.
-¾ÖÆ®¸®ºäÆ®¿¡ µé¾î ÀÖ´Â ³Î°ªÀº '¾Ë·ÁÁöÁö ¾ÊÀ½(unknown)'À» ÀÇ¹ÌÇÏ±â ¶§¹®¿¡ SQLÀº ¼¼ °¡Áö °ªÀÇ ³í¸®¸¦ »ç¿ëÇÑ´Ù.
-true = 1, false = 0, unknown = 0.5·Î »ý°¢ÇÏ°í C1°ú C2°¡ true, false, unknown Áß ÇÏ³ªÀÇ °ªÀ» °®´Â Á¶°ÇÀÏ ¶§
+ë„ì´ í”„ë ˆë””í‚¤íŠ¸ì— ë¯¸ì¹˜ëŠ” ì˜í–¥ì„ ìœ ì˜í•´ì•¼ í•œë‹¤.
+ì• íŠ¸ë¦¬ë·°íŠ¸ì— ë“¤ì–´ ìžˆëŠ” ë„ê°’ì€ 'ì•Œë ¤ì§€ì§€ ì•ŠìŒ(unknown)'ì„ ì˜ë¯¸í•˜ê¸° ë•Œë¬¸ì— SQLì€ ì„¸ ê°€ì§€ ê°’ì˜ ë…¼ë¦¬ë¥¼ ì‚¬ìš©í•œë‹¤.
+true = 1, false = 0, unknown = 0.5ë¡œ ìƒê°í•˜ê³  C1ê³¼ C2ê°€ true, false, unknown ì¤‘ í•˜ë‚˜ì˜ ê°’ì„ ê°–ëŠ” ì¡°ê±´ì¼ ë•Œ
 C1 AND C2 = min(C1, C2)
 C1 OR C2 = max(C1, C2)
 NOT(C1) = 1 - C1
-ÀÓÀ» ±â¾ïÇÏ¸é »ý°¢º¸´Ù ½±°Ô ÀÀ¿ëÇÒ ¼ö ÀÖ´Ù.
+ìž„ì„ ê¸°ì–µí•˜ë©´ ìƒê°ë³´ë‹¤ ì‰½ê²Œ ì‘ìš©í•  ìˆ˜ ìžˆë‹¤.
 
 
 

@@ -1,0 +1,11 @@
+Git Flow.png 사진 참고.
+
+Git Flow(브랜치 전략), Git을 잘 사용하는 방법의 권고안 정도(많이들 채택).
+
+develop branch를 중심으로 개발을 한다.
+feature branches 각 기능별 branch를 만들어 기능을 개발하면서 merge를 한다.
+release branch를 만들어 배포 전 테스트를 하면서 버그를 수정하면서 최종 배포 가능 지점이 오면 master branch에 merge를 한다.
+
+이 때, master branch에서는 태그 기능을 사용해서 버전을 만들어 준다.(기능 소개까지)
+
+hotfixes branch는 배포 과정중에 오류가 있을 때 빠르게 그 것을 수정하기 위한 branch이다.

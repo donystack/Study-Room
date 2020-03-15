@@ -1,0 +1,26 @@
+오류 메세지.
+$ git stash apply stash@{1}
+error: Your local changes to the following files would be overwritten by merge:
+        src/main/webapp/WEB-INF/views/board/register.jsp
+        src/main/webapp/WEB-INF/views/template/header.jsp
+Please commit your changes or stash them before you merge.
+Aborting
+
+stash를 한 뒤에 다른 브랜치에서 작업을 하였고 소스코드가 충돌이 있는 상황이다.
+
+https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-your-changes-or-stash-them-before-you-can-me
+
+문제 해결 방법에는 
+1.Commit the change using
+git commit -m "My message"
+
+2.Stash it.
+git stash
+
+3.Discard the local changes
+git reset --hard
+
+이 중 상황에 따라서 사용할 수 있지만
+2번의 경우에는 불가능 했다.
+
+나는 1번을 통해 해결할 수 있었다.

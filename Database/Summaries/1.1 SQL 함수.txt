@@ -1,13 +1,13 @@
-                                                                                 ¹®ÀÚÇü
-                                                                                 ¼ýÀÚÇü
-                                                                                 ³¯Â¥Çü
-                                                                                 º¯È¯Çü
-                            -> ´ÜÀÏÇà ÇÔ¼ö(Single-Row Function)     NULL
-                                                                                 Case Ç¥Çö
-         ->³»Àå ÇÔ¼ö(Built-In Function)      
-ÇÔ¼ö                                                        -> Áý°è ÇÔ¼ö (Aggregation Function)  
-                            -> ´ÙÁßÇà ÇÔ¼ö              -> ±×·ì ÇÔ¼ö (Group Function)
-                        (Multi-Row Function)          -> À©µµ¿ì ÇÔ¼ö(Window Function)
+                                                                                 ë¬¸ìží˜•
+                                                                                 ìˆ«ìží˜•
+                                                                                 ë‚ ì§œí˜•
+                                                                                 ë³€í™˜í˜•
+                            -> ë‹¨ì¼í–‰ í•¨ìˆ˜(Single-Row Function)     NULL
+                                                                                 Case í‘œí˜„
+         ->ë‚´ìž¥ í•¨ìˆ˜(Built-In Function)      
+í•¨ìˆ˜                                                        -> ì§‘ê³„ í•¨ìˆ˜ (Aggregation Function)  
+                            -> ë‹¤ì¤‘í–‰ í•¨ìˆ˜              -> ê·¸ë£¹ í•¨ìˆ˜ (Group Function)
+                        (Multi-Row Function)          -> ìœˆë„ìš° í•¨ìˆ˜(Window Function)
 
 
-         -> »ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö                          
+         -> ì‚¬ìš©ìž ì •ì˜ í•¨ìˆ˜                          

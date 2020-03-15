@@ -1,0 +1,45 @@
+
+after git commit
+-rw-r--r-- 1 DongHo 197121   2 1월  19 16:34 COMMIT_EDITMSG 1
+-rw-r--r-- 1 DongHo 197121 130 1월  19 16:32 config
+-rw-r--r-- 1 DongHo 197121  73 1월  19 16:32 description
+-rw-r--r-- 1 DongHo 197121  23 1월  19 16:32 HEAD
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:32 hooks/
+-rw-r--r-- 1 DongHo 197121 137 1월  19 16:34 index 2
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:32 info/
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:34 logs/ 3
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:34 objects/ 
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:32 refs/
+
+
+after git init
+-rw-r--r-- 1 DongHo 197121 130 1월  19 16:32 config
+-rw-r--r-- 1 DongHo 197121  73 1월  19 16:32 description
+-rw-r--r-- 1 DongHo 197121  23 1월  19 16:32 HEAD
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:32 hooks/
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:32 info/
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:32 objects/
+drwxr-xr-x 1 DongHo 197121   0 1월  19 16:32 refs/
+
+HEAD의 역활 현재 체크아웃된 브랜치의 가리키고있는 최신 commit의 위치(object명)을 저장.
+
+$ cat HEAD
+ref: refs/heads/master
+
+$pwd
+/c/Users/DongHo/principle of branch/.git/refs/heads
+$ cat master
+fea86ee89f1e63e6f09be7219191dc8c3f2c4aa0
+master 브렌치의 최신 commit을 가리키고 있다.
+(git의 원리 확인)
+
+$git branch exp를 하면
+-rw-r--r-- 1 DongHo 197121 41 1월  19 16:44 exp
+-rw-r--r-- 1 DongHo 197121 41 1월  19 16:34 master
+exp파일이 생성된 것을 확인할 수 있다.
+
+$git checkout exp를 하면 HEAD파일이 가리키는 것이 달라진다.
+$ cat HEAD
+ref: refs/heads/exp
+
+

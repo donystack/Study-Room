@@ -1,0 +1,19 @@
+#git log -p(commit과 commit 사이의 source 사이의 차이를 알 수 있다.)
+
+(커밋 관련 정보가 나오고)
+commit 78f68afb29c093913052f53a283af74a5a625aa1
+게시판에 스프링 시큐리티 적용, 회원가입기능  보완(트랜잭션, 닉네임 중복확인)
+
+(그 아래에 이렇게 되어있는 것을 확인할 수 있다.)
+---    a/src/main/java/com/cultura/controller/UserController.java (기존 commit을 의미)
++++ b/src/main/java/com/cultura/controller/UserController.java (새로 commit된 부분을 의미)
+
+--- /dev/null
++++ b/f2.txt
+(이렇게 나올 경우에는 이전에는 없던 파일을 의미한다.)
+
+#git diff (앞쪽C)cfb10050c17ef3666c13f2d3ffecd0f2682edfb3..3d21019e9d176edf9f869d07188e5a0d649675b8(뒷쪽C)
+(=소스상의 비교)
+
+#git diff [filename]
+변경된 파일이 많을 경우 전부 출력되지 않을 것이다. [filename]을 입력하여 비교하도록 한다.

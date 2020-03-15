@@ -1,16 +1,16 @@
-ANSI/ISO SQL Ç¥ÁØÀº µ¥ÀÌÅÍ ºÐ¼®À» À§ÇØ¼­ ´ÙÀ½ ¼¼ °¡Áö ÇÔ¼ö¸¦ Á¤ÀÇÇÏ°í ÀÖ´Ù.
-AGGREGATE FUNCTION(Áý°è ÇÔ¼ö)
-GROUP FUNCTION(±×·ì ÇÔ¼ö) : °á»ê °³³äÀÇ ¾÷¹«
-WINDOW FUNCTION(À©µµ¿ì ÇÔ¼ö) : ºÐ¼® ÇÔ¼ö³ª ¼øÀ§ ÇÔ¼ö·Î ºÒ¸². µ¥ÀÌÅÍ¿þ¾îÇÏ¿ì½º¿¡¼­ ¹ßÀüÇÑ ±â´É
+ANSI/ISO SQL í‘œì¤€ì€ ë°ì´í„° ë¶„ì„ì„ ìœ„í•´ì„œ ë‹¤ìŒ ì„¸ ê°€ì§€ í•¨ìˆ˜ë¥¼ ì •ì˜í•˜ê³  ìžˆë‹¤.
+AGGREGATE FUNCTION(ì§‘ê³„ í•¨ìˆ˜)
+GROUP FUNCTION(ê·¸ë£¹ í•¨ìˆ˜) : ê²°ì‚° ê°œë…ì˜ ì—…ë¬´
+WINDOW FUNCTION(ìœˆë„ìš° í•¨ìˆ˜) : ë¶„ì„ í•¨ìˆ˜ë‚˜ ìˆœìœ„ í•¨ìˆ˜ë¡œ ë¶ˆë¦¼. ë°ì´í„°ì›¨ì–´í•˜ìš°ìŠ¤ì—ì„œ ë°œì „í•œ ê¸°ëŠ¥
 
-Áý°è ÇÔ¼ö(Aggregate Function) : Group FunctionÀÇ ÇÑ ºÎºÐÀ¸·Î ºÐ·ùÇÒ ¼ö ÀÖ´Ù. (Áý´Ü ÇÔ¼ö( COUNT ,AVG µî) ¿Ü °¢Á¾ Áý°è ÇÔ¼öµéÀÌ Æ÷ÇÔµÇ¾î ÀÖ´Ù.)
+ì§‘ê³„ í•¨ìˆ˜(Aggregate Function) : Group Functionì˜ í•œ ë¶€ë¶„ìœ¼ë¡œ ë¶„ë¥˜í•  ìˆ˜ ìžˆë‹¤. (ì§‘ë‹¨ í•¨ìˆ˜( COUNT ,AVG ë“±) ì™¸ ê°ì¢… ì§‘ê³„ í•¨ìˆ˜ë“¤ì´ í¬í•¨ë˜ì–´ ìžˆë‹¤.)
 
-±×·ì ÇÔ¼ö(Group Function) : °á»ê °³³äÀÇ ¾÷¹«(¿ø°¡³ª ÆÇ¸Å ½Ã½ºÅÛÀÇ °æ¿ì´Â ¼Ò°è, Áß°è, ÇÕ°è, ÃÑ ÇÕ°è µî ¿©·¯ ·¹º§ÀÇ °á»ê º¸°í¼­¸¦ ¸¸µå´Âµ¥ À¯¿ë)
+ê·¸ë£¹ í•¨ìˆ˜(Group Function) : ê²°ì‚° ê°œë…ì˜ ì—…ë¬´(ì›ê°€ë‚˜ íŒë§¤ ì‹œìŠ¤í…œì˜ ê²½ìš°ëŠ” ì†Œê³„, ì¤‘ê³„, í•©ê³„, ì´ í•©ê³„ ë“± ì—¬ëŸ¬ ë ˆë²¨ì˜ ê²°ì‚° ë³´ê³ ì„œë¥¼ ë§Œë“œëŠ”ë° ìœ ìš©)
 
-Áý°è ÇÔ¼ö¸¦ Á¦¿ÜÇÏ°í 
-¼Ò±×·ì °£ÀÇ ¼Ò°è¸¦ °Ô»êÇÏ´Â Rollup ÇÔ¼ö
-Gourp By Ç×¸ñµé°£ ´ÙÂ÷¿øÀûÀÎ ¼Ò°è¸¦ °è»êÇÒ ¼ö ÀÖ´Â CUBE ÇÔ¼ö
-Æ¯Á¤ Ç×¸ñ¿¡ ´ëÇÑ ¼Ò°è¸¦ °è»êÇÏ´Â Grouping sets ÇÔ¼ö°¡ ÀÖ´Ù.
+ì§‘ê³„ í•¨ìˆ˜ë¥¼ ì œì™¸í•˜ê³  
+ì†Œê·¸ë£¹ ê°„ì˜ ì†Œê³„ë¥¼ ê²Œì‚°í•˜ëŠ” Rollup í•¨ìˆ˜
+Gourp By í•­ëª©ë“¤ê°„ ë‹¤ì°¨ì›ì ì¸ ì†Œê³„ë¥¼ ê³„ì‚°í•  ìˆ˜ ìžˆëŠ” CUBE í•¨ìˆ˜
+íŠ¹ì • í•­ëª©ì— ëŒ€í•œ ì†Œê³„ë¥¼ ê³„ì‚°í•˜ëŠ” Grouping sets í•¨ìˆ˜ê°€ ìžˆë‹¤.
 
 ex)
 select dname, grouping(dname), job, grouping(job) ,count(*) "total Empl", sum(Salary) "total Salary"
@@ -18,9 +18,9 @@ from emp, dept
 where dept.deptid = emp.dept
 group by rollup (dname, job);
 
-Window Function Á¾·ù
-1. ±×·ì ³» ¼øÀ§(RANK) °ü·Ã ÇÔ¼ö : RANK, DENSE_RANK, ROW_NUMBER
-2. ±×·ì ³» Áý°è(AGGREGATE)
-3. ±×·ì ³» Çà ¼ø¼­ °ü·Ã ÇÔ¼ö : FIRST_VALUE, LAST_VALUE(MAX, MIN ÇÔ¼ö¿Í ºñ½ÁÇÑ °á°ú), LAG, LEAD(DW¿¡¼­ À¯¿ëÇÏ°Ô »ç¿ë)
-4. ±×·ì ³» ºñÀ² °ü·Ã ÇÔ¼ö : CUME_DIST, PERCENT_RANK, NTILE, RATIO_TO_REPORT 
-5. ¼±Çü ºÐ¼®À» Æ÷ÇÔÇÑ Åë°è ºÐ¼® °ü·Ã ÇÔ¼ö : »ý·«
+Window Function ì¢…ë¥˜
+1. ê·¸ë£¹ ë‚´ ìˆœìœ„(RANK) ê´€ë ¨ í•¨ìˆ˜ : RANK, DENSE_RANK, ROW_NUMBER
+2. ê·¸ë£¹ ë‚´ ì§‘ê³„(AGGREGATE)
+3. ê·¸ë£¹ ë‚´ í–‰ ìˆœì„œ ê´€ë ¨ í•¨ìˆ˜ : FIRST_VALUE, LAST_VALUE(MAX, MIN í•¨ìˆ˜ì™€ ë¹„ìŠ·í•œ ê²°ê³¼), LAG, LEAD(DWì—ì„œ ìœ ìš©í•˜ê²Œ ì‚¬ìš©)
+4. ê·¸ë£¹ ë‚´ ë¹„ìœ¨ ê´€ë ¨ í•¨ìˆ˜ : CUME_DIST, PERCENT_RANK, NTILE, RATIO_TO_REPORT 
+5. ì„ í˜• ë¶„ì„ì„ í¬í•¨í•œ í†µê³„ ë¶„ì„ ê´€ë ¨ í•¨ìˆ˜ : ìƒëžµ

@@ -1,0 +1,79 @@
+
+git add의 원리
+실습(Gistory 프로그램으로 내부 확인)
+f1.txt (내용: a)
+한뒤에 add를 하면
+Gistory로 .git의 내부를 확인해 보면
+index 파일과 object폴더의 변화가 일어난 것을 확인할 수 있다.
+$ ls -al
+total 17
+drwxr-xr-x 1 DongHo 197121   0 4월  27 15:29 ./
+drwxr-xr-x 1 DongHo 197121   0 4월  27 15:12 ../
+-rw-r--r-- 1 DongHo 197121 308 4월   3 13:30 config
+-rw-r--r-- 1 DongHo 197121  73 4월   3 13:30 description
+-rw-r--r-- 1 DongHo 197121  23 4월   3 13:30 HEAD
+drwxr-xr-x 1 DongHo 197121   0 4월   3 13:30 hooks/
+-rw-r--r-- 1 DongHo 197121 137 4월  27 15:12 index
+drwxr-xr-x 1 DongHo 197121   0 4월   3 13:30 info/
+drwxr-xr-x 1 DongHo 197121   0 4월   3 13:30 logs/
+drwxr-xr-x 1 DongHo 197121   0 4월   3 13:30 objects/
+-rw-r--r-- 1 DongHo 197121 114 4월   3 13:30 packed-refs
+drwxr-xr-x 1 DongHo 197121   0 4월   3 13:30 refs/
+
+index파일의 내부의 변화(binary 파일이라 gistroy로 확인하여야 함.)
+102033 78f68afb29c093913052f53a283af74a5a625aa1 f1.txt
+(index파일의 내용은 object파일명과 저장된 파일 명으로 짝지어져 있는 파일로 구성되어 있다.)
+(index파일 자체의 정확한 의미는 stage area)
+
+objects디렉토리에 xx디렉토리에 파일이 생성된 것을 확인할 수 있다.
+$ ls -al
+total 4
+drwxr-xr-x 1 DongHo 197121 0 4월   3 13:30 ./
+drwxr-xr-x 1 DongHo 197121 0 4월  27 15:29 ../
+drwxr-xr-x 1 DongHo 197121 0 4월   3 13:30 8d/
+drwxr-xr-x 1 DongHo 197121 0 4월   3 13:30 78/f68afb29c093913052f53a283af74a5a625aa1
+drwxr-xr-x 1 DongHo 197121 0 4월   3 13:30 c4/
+drwxr-xr-x 1 DongHo 197121 0 4월   3 13:30 info/
+drwxr-xr-x 1 DongHo 197121 0 4월   3 13:30 pack/
+--> 파일의 이름은 index에 저장이 되고 그 내용은 object에 저장이 된다.
+
+$cp f1.txt f3.txt
+$git add f3.txt
+
+index
+102033 78f68afb29c093913052f53a283af74a5a625aa1 f1.txt
+102033 78f68afb29c093913052f53a283af74a5a625aa1 f3.txt
+
+git은 어떤 파일을 저장할 때 파일의 이름이 달라도
+파일의 내용이 같으면 같은 object파일명을 가리킨다.
+아무리 많은 중복된 파일이 저장되더라도 git은 중복을 제거하여 저장할 수 있다는 것을 의미한다.
+
+object 파일의 원리.
+--> hash 알고리즘을 이용한다.(SHA1)
+hash값 앞의 2자리를 이용해 디렉토리를 만들고
+나머지 값으로 파일이름으로 사용해 저장한다.
+
+commit의 원리
+objects의 파일은 크게 3가지로 나뉜다.(전부 SHA1으로 생성)
+1.commit 2.tree 3.blob
+(접근 순서)commit --> tree --> blob
+1.commit파일 : commit을 했을 때 커밋 내용(메세지, tree파일 포인터, parent, committer)과 시점에 따라서 생성.(commit도 파일이다.)
+tree 5f40be29320928a15e01e23f9b3d2f3184fcbfba
+parent a238e2932dy28a15lkj90a32ujklq3;jp98as873al9(이전 커밋 파일을 포인트)
+author hohomen <earomatic@naver.com>
+committer hohomen <earomatic@naver.com>
+
+2.tree파일 : 커밋된 파일 목록을 나타내는 파일(정확히는 폴더로 그 안의 내용을 보여준다.). 그 목록(폴더의 파일들)은 blob 파일들의 포인트를 저장한다.
+100535 blob 1f40be29320928a15e01e23f9b3d2f3184fcbfba
+100535 blob i238e2932dy28a15lkj90a32ujklq3;jp98as873al9
+100535 blob 38f68afb29c093913052f53a283af74a5a625aa1 
+
+3.blob(A Binary Large OBject)파일 : 파일의 내용에 해당하는 파일
+
+cf.시점과 내용에 따라 commit파일 생성 = 스냅샷
+
+index은 바로 다음에 커밋할 것들이다. 즉 stage area이다.
+HEAD는 현재 브랜치를 가리키는 포인터 + 브랜치에 담긴 커밋 중 가장 마지막 커밋을 가리킨다.
+
+
+

@@ -1,0 +1,22 @@
+다른 브랜치로 checkout을 해야 하는데 아직 현재 브랜치에서 작업이 끝나지 않은 경우는 커밋을 하기가 애매합니다. 이런 경우 stash를 이용하면 작업중이던 파일을 임시로 저장해두고 현재 브랜치의 상태를 마지막 커밋의 상태로 초기화 할 수 있습니다. 
+
+stash(meaning:감추다, 숨겨두다)
+Modified이면서 Tracked 상태인 파일과 Staging Area에 있는 파일들을 보관해두는 장소다. 수정사항을 스택에 잠시 저장했다가 나중에 적용할 수 있다.
+
+하던 일을 stash하기
+$git stash(=git stash save) 하면  워킹 디렉터리는 깨끗해진다.
+
+$git status
+on branch ##
+nothing to commit, working directory clean
+
+복원
+git stash apply (=git stash apply stash@{0} 이름이 없을 경우에는 가장 최근의 stash를 적용한다.)
+꼭 깨끗한 워킹 디렉터리나 Stash할 때와 같은 브랜치에 적용해야 하는 것은 아니다. 
+만약 충돌이 있으면 알려준다.(stash를 하고 옮겨 간 뒤에 남은 stash들을 다른 branch로 옮겨가는 것도 생각해볼 필요가 있겠다.
+
+git stash apply 옵션은 단순히 Stash를 적용하는 것 뿐이다. git stash drop 명령을 사용하여 해당 Stash를 제거한다.
+($git reset --hard (최신 커밋으로) $git stash apply 이것을 반복할 수 있겠다.)
+(git stash apply; git stash drop; = git stash pop)
+
+

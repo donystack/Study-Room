@@ -1,0 +1,42 @@
+Git을 잘 이해하고 싶다면 .git/ 디렉토리를 잘 이해하면 좋다.
+
+(Object 파일과 관련)
+index : 바로 다음에 커밋할 것들이다. 즉 stage area이다.
+HEAD : 현재 브랜치를 가리키는 포인터 + 브랜치에 담긴 커밋 중 가장 마지막 커밋을 가리킨다.
+
+$ pwd /.git
+-rw-r--r-- 1 DongHo 197121    36 4월  11 13:23 HEAD
+drwxr-xr-x 1 DongHo 197121     0 3월  27 19:31 hooks/
+-rw-r--r-- 1 DongHo 197121 12699 4월  27 13:41 index
+drwxr-xr-x 1 DongHo 197121     0 3월  27 19:31 info/
+drwxr-xr-x 1 DongHo 197121     0 3월  27 19:33 logs/
+drwxr-xr-x 1 DongHo 197121     0 4월  11 08:56 objects/
+drwxr-xr-x 1 DongHo 197121     0 4월   6 17:22 refs/
+
+index은 바로 다음에 커밋할 것들이다. 즉 stage area이다.
+index파일의 내용은 object파일명과 저장된 파일 명으로 짝지어져 있는 파일로 구성되어 있다.
+102033 78f68afb29c093913052f53a283af74a5a625aa1 f1.txt
+102033 ad268afb29c093913052f53a283af74a5a62d2kq f3.txt
+(자세한 정리는 1.2 principle of Git.txt)
+
+HEAD는 현재 브랜치를 가리키는 포인터 + 브랜치에 담긴 커밋 중 가장 마지막 커밋을 가리킨다.
+$ cat HEAD
+ref: refs/heads/develop
+
+$pwd /.git/refs/heads 
+-rw-r--r-- 1 DongHo 197121 41 4월  11 09:02 develop
+-rw-r--r-- 1 DongHo 197121 41 4월   9 15:14 feat_logging
+-rw-r--r-- 1 DongHo 197121 41 4월  20 22:26 feat_security_login
+-rw-r--r-- 1 DongHo 197121 41 4월  11 09:00 master
+
+$ pwd /.git/refs/
+drwxr-xr-x 1 DongHo 197121  0 4월  20 22:26 heads/
+drwxr-xr-x 1 DongHo 197121  0 3월  27 19:39 remotes/
+-rw-r--r-- 1 DongHo 197121 41 4월   6 17:22 stash
+drwxr-xr-x 1 DongHo 197121  0 3월  27 19:31 tags/
+
+
+
+
+1일 커밋으로 데이터 백업
+merge, rebase를 이용하여 버전관리

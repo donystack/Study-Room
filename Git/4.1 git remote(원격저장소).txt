@@ -1,0 +1,43 @@
+git소스코드를 지역저장소로 가져오기.
+
+명령어 git clone (ex)https://github.com/git/git.git gitsrc
+(gitsrc를 적어줌으로서 폴더를 만들면서 그 위치에 저장할 수 있다.)
+
+2가지 방법이 있을 수 있다.
+1.지역저장소 -----------> 원격저장소
+(push an existing repository from the command line)
+2.원격저장소 -- clone --> 지역저장소
+create a new repository on the command line
+
+1의 방법
+1) git의 프로젝트로 이동.
+2) remote add origin https://github.com/hohomen/blog.git
+origin은 https://~~을 대신한 별명(보통 로컬과 메인으로 연결되는 기본 원격저장소의 이름을 origin으로 명명함. 기본 브랜치의 이름이 master인 것처럼.)
+명령어 입력하고 아무 것도 나오지 않으면 잘 된 것.
+3) git remote (git remote -v)
+잘 됬는 지 확인
+cf. 세부 명령어 잘 모를 때. git remote --help
+4) git push -u origin master (git push -u 명령은 한 번만, 이후에는 그냥 git push만 해주면 된다.)
+원격저장소 origin의 내용은 master에 push한다.
+이러면 아이디와 비밀번호를 입력하고 백업(업로드)을 할 수 있다.
+5) 다음부터는 지역저장소와 원격저장소가 연결이 되어 있기 때문에 git push라는 명령어만 입력하면 된다.
+
+2. 다른  새 컴퓨터에서 작업할 경우 
+새로운 디렉토리를 만들고
+git clone https://gitgub.com/hohomen/blog.git  .
+.은 현재 디렉토리를 의미
+git remote -v를 해보면 
+origin https://github.com/hohomen/blog.git (fetch)
+origin https://github.com/hohomen/blog.git (push)
+원격저장소가 등록되어 있는 것을 확인할 수 있다.
+
+
+git 동기화 방법
+1 >git pull
+(아이디 패스워드를 물어보지 않는 것은 공개저장소이기 때문에)
+2.작업
+3 >git push
+
++ submodule도 정리해두자.
+
+
