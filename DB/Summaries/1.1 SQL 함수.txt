@@ -1,0 +1,13 @@
+                                                                                 문자형
+                                                                                 숫자형
+                                                                                 날짜형
+                                                                                 변환형
+                            -> 단일행 함수(Single-Row Function)     NULL
+                                                                                 Case 표현
+         ->내장 함수(Built-In Function)      
+함수                                                        -> 집계 함수 (Aggregation Function)  
+                            -> 다중행 함수              -> 그룹 함수 (Group Function)
+                        (Multi-Row Function)          -> 윈도우 함수(Window Function)
+
+
+         -> 사용자 정의 함수                          
