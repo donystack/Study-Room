@@ -1,0 +1,34 @@
+p75
+참조 쪽 필터 조건에 (+) 사용: 아우터-조인 전에 필터 조건이 사용된다.
+참조 쪽 필터 조건에 (+) 미사용 : 아우터-조인 후, 조인 결과에 필터 조건이 사용된다.
+
+
+값이 나올 수 없음
+		SELECT H320.APLIER_ID /* 지원자ID */,
+			       H320.SELF_INTRO_DOC_FILE_NO,	/* 자기소개서파일번호 */ 		
+		   		   SF_SSTM041_STRFILE(H320.SELF_INTRO_DOC_FILE_NO) AS SELF_INTRO_DOC_FILE_NM,	/* 자기소개서파일명 */ 		
+			       H320.EDU_RECH_FILE_NO,	 /* 교육연구파일번호 */
+			       SF_SSTM041_STRFILE(H320.EDU_RECH_FILE_NO) AS EDU_RECH_FILE_NM,	 /* 교육연구파일명 */
+			       A322.ATTACH_NO AS A322_ATTACH_NO,
+			       SF_SSTM041_STRFILE(A322.ATTACH_NO) AS A322_ATTACH_NM /* 교원자격증 파일명 */
+	  	   FROM HURT320 H320
+	  LEFT JOIN HURA322 A322
+	 	  	 ON H320.APLIER_ID = A322.APLIER_ID
+	 	  WHERE H320.APLIER_ID = 18969	 	    
+	 	  	 AND A322.LIC_CLSF_FG = 'U100100023'	 	    
+
+
+
+값이 나올 수 있다.
+		SELECT H320.APLIER_ID /* 지원자ID */,
+			       H320.SELF_INTRO_DOC_FILE_NO,	/* 자기소개서파일번호 */ 		
+		   		   SF_SSTM041_STRFILE(H320.SELF_INTRO_DOC_FILE_NO) AS SELF_INTRO_DOC_FILE_NM,	/* 자기소개서파일명 */ 		
+			       H320.EDU_RECH_FILE_NO,	 /* 교육연구파일번호 */
+			       SF_SSTM041_STRFILE(H320.EDU_RECH_FILE_NO) AS EDU_RECH_FILE_NM,	 /* 교육연구파일명 */
+			       A322.ATTACH_NO AS A322_ATTACH_NO,
+			       SF_SSTM041_STRFILE(A322.ATTACH_NO) AS A322_ATTACH_NM /* 교원자격증 파일명 */
+	  	   FROM HURT320 H320
+	  LEFT JOIN HURA322 A322
+	 	  	 ON H320.APLIER_ID = A322.APLIER_ID
+	 	  	 AND A322.LIC_CLSF_FG = 'U100100023'	 	    
+	 	  WHERE H320.APLIER_ID = 18969	 	    

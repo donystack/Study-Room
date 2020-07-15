@@ -1,0 +1,26 @@
+NULL indicates absence of a value. You cannot use NULL in a comparison, it will always result in NULL. If this does not lead to the desired result there are special operators to deal with NULL explicitly.
+
+NULL은 값의 부재를 나타낸다. 널은 값의 비교에 사용할 수 없다. 이러한 환경에서 원하는 결과를 만들어 낼 수 없다면 특별한 연산을 통해 NULL을 다루어야 한다.
+
+
+업무중에 'U100100001'와 'U100100002' 값을 제외한 모든 값을 가지고 오려 다음과 같은 문장을 작성했었다.
+
+LEFT JOIN RURA322 A322
+         ON H320.APR_ID = A322.APR_ID
+       AND A322.LIC_FG NOT IN ( 'U100100001' , 'U100100002') 
+
+하지만 A322.LIC_FG에 있는 NULL값은 결과로 가지고 오지 못하는 것을 확인했다.
+따라서 NULL값까지 결과에 포함하고 싶다면 다음과 같이 NULL에 대한 연산을 추가해 주어야 한다.
+
+LEFT JOIN RURA322 A322
+         ON H320.APR_ID = A322.APR_ID
+       AND A322.LIC_FG NOT IN ( 'U100100001' , 'U100100002') 
+         OR A322.LIC_FG IS NULL
+
+(A322.LIC_CLSF_FG IS NULL 
+	 	  		 OR A322.LIC_CLSF_FG <![CDATA[<>]]> 'U100100001' 
+	 	  		 OR A322.LIC_CLSF_FG <![CDATA[<>]]> 'U100100002') 	 	    
+	 	  WHERE H320.APLIER_ID = #aplierId#
+
+But what if i actually want to take into account NULLS?
+Make a separate where clause for null: WHERE val NOT IN (1, 2) OR val IS NULL
