@@ -8,7 +8,7 @@
 정확한 순서보다는 실행계획의 트리를 통해 흐름을 파악하는 것이 중요하다.
 
 
-### 실제 실행계획 확인하긴
+### 실제 실행계획 확인하기
 실제 실행계획을 확인하는 방법은 2가지가 있다.
 1. SQL에 'GATHER_PLAN_STATISTICS' 힌트를 사용.
 2. 세션에 트레이스(Trace)를 걸기.
@@ -40,3 +40,13 @@ SELECT  *
 FROM TABLE(DBMS_XPLAN.DISPLAY_CURSOR('bmjjk7adpg82g',0,'ALLSTATS LAST'));
 ```
 
+### 정확한 테스트를 위해
+```
+ALTER SYSTEM FLUSH BUFFER_CACHE;
+```
+SQL 실행 전에, 위의 명령어로 버퍼캐시에 있는 블록들을 비워내야 한다. 버퍼캐시에 데이터가 이미 존재하고 있으면 실행 시간 측정이 정확히 이루어지지 않는다. 다만 운영 환경에서 실행하면 절대 안 되는 위험한 명령어이다.
+
+ ### V$SQL 뷰 비우기
+ ```
+ALTER SYSTEM FLUSH SHARED_POOL;
+```
